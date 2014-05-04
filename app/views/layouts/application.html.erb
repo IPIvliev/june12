@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= full_title(yield(:title)) %></title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+		<meta name="keywords" content="Нижний Новгород, студенты, стеденческие инициативы, Шанцев, День города, 12 июня, Нижегородская область, День России, праздник" />
+		<meta name="description" content="Ассамблея студенческий инициатив Виват, Россия!" />
+	</head>
+	<body>
+		<%= render 'static_pages/header' %>
+		<%= yield %>
+		<%= render 'static_pages/footer' %>
+	</body>
+</html>
