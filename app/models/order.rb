@@ -1,3 +1,5 @@
 class Order < ActiveRecord::Base
-  attr_accessible :amount, :paid, :product_id, :size, :user_id
+  attr_accessible :totalprice, :paid, :line_items, :user_id
+
+  serialize :line_items, Hash
 end

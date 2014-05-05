@@ -1,5 +1,7 @@
 June12::Application.routes.draw do
 
+  devise_for :users
+
   resources :users
 
 
@@ -13,9 +15,9 @@ June12::Application.routes.draw do
 
   get "static_pages/about"
 
-  get "static_pages/contacts"
+  get "/contacts.html", :to => "static_pages#contacts"
 
-  get "static_pages/gallery"
+  get "/gallery.html", :to => "static_pages#gallery"
 
   root :to => 'static_pages#index'
 

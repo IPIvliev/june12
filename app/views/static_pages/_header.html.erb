@@ -1,62 +1,29 @@
 		<!-- TOP BAR -->
 		<div id="topBar">
 			<div class="container">
-				<span class="hidden-xs">Welcome to Alkaline: you@domain.com or</span> 
-				+800-123-456
+				<span class="hidden-xs">Добро подаловать: kreml500@rambler.ru</span> 
+				8-920-293-10-50
 
-				<!-- LANGUAGE -->
+
 				<div class="btn-group pull-right">
 					<button class="dropdown-toggle language" type="button" data-toggle="dropdown">
-						<img id="current_lang" src="assets/images/flags/us.png" width="16" height="11" alt="EN Language" /> <span class="hidden-xs">English</span> <span class="caret"></span>
+						Логин <span class="caret"></span>
 					</button>
 
 					<ul class="dropdown-menu">
 						<li>
-							<a href="#">
-								<img src="assets/images/flags/us.png" width="16" height="11" alt="EN Language" /> [US] English
-							</a>
+							<a href="page-login.html"><i class="fa fa-user"></i> Логин</a>
 						</li>
 						<li>
-							<a href="#">
-								<img src="assets/images/flags/de.png" width="16" height="11" alt="DE Language" /> [DE] German
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="assets/images/flags/fr.png" width="16" height="11" alt="FR Language" /> [FR] French
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="assets/images/flags/ru.png" width="16" height="11" alt="RU Language" /> [RU] Russian
-							</a>
-						</li>
-					</ul>
-				</div>
-				<!-- /LANGUAGE -->
-
-				<div class="btn-group pull-right">
-					<button class="dropdown-toggle language" type="button" data-toggle="dropdown">
-						My Account <span class="caret"></span>
-					</button>
-
-					<ul class="dropdown-menu">
-						<li>
-							<a href="page-login.html"><i class="fa fa-user"></i> Login</a>
-						</li>
-						<li>
-							<a href="page-register.html"><i class="fa fa-key"></i> Register</a>
+							<a href="page-register.html"><i class="fa fa-key"></i> Регистрация</a>
 						</li>
 						<li class="divider"></li>
+
+						<% if current_user %>
 						<li>
-							<a href="page-account-settings.html"><i class="fa fa-cogs"></i> Account Settings</a>
+							<a href="page-account-logout.html"><i class="fa fa-power-off"></i> Выход</a>
 						</li>
-						<li>
-							<a href="shop-history.html"><i class="fa fa-book"></i> Order History</a>
-						</li>
-						<li>
-							<a href="page-account-logout.html"><i class="fa fa-power-off"></i> Logout</a>
-						</li>
+						<% end %>
 					</ul>
 				</div>
 
@@ -86,22 +53,12 @@
 			<div class="container">
 
 				<!-- LOGO -->
-				<a href="index.html" class="logo"><img alt="" src="assets/images/logo.png" height="60" /></a>
+				<a href="index.html" class="logo"><img alt="" src="/images/logo.png" height="60" /></a>
 				<!-- LOGO -->
 
 				<!-- OPTIONS -->
 				<ul id="topOptions">
-					<li>
-						<button class="topSearchBtn fa fa-search"></button>
-						<!-- search form -->
-						<form id="topSearch" method="get" action="page-search.html" class="input-group pull-right">
-							<input type="text" class="form-control" name="k" id="k" value="" placeholder="Search">
-							<span class="input-group-btn">
-								<button class="btn btn-primary notransition"><i class="fa fa-check"></i></button>
-							</span>
-						</form>
-						<!-- /search form -->
-					</li>
+
 					<li>
 						<div class="button topShopCart fa fa-shopping-cart">
 							<span class="items on"><!-- add class "on" for active -->3 items</span>
@@ -145,98 +102,36 @@
 						<ul class="nav nav-pills nav-main scroll-menu" id="topMain">
 
 							<li class="active">
-								<a class="dropdown-toggle" href="index.html">HOME</a>
+								<%= link_to "ГЛАВНАЯ", root_path, :class => "dropdown-toggle" %>
 							</li>
 
 							<li class="dropdown">
-								<a class="dropdown-toggle" href="#">PAGES <i class="fa fa-angle-down"></i></a>
+								<a class="dropdown-toggle" href="#">О ПРОЕКТЕ <i class="fa fa-angle-down"></i></a>
 								<ul class="dropdown-menu">
-									<li><a href="page-about-us.html">About Us</a></li>
-									<li><a href="page-team.html">Team</a></li>
-									<li><a href="page-services.html">Services</a></li>
-									<li><a href="page-faq.html">FAQ</a></li>
-									<li><a href="page-pricing.html">Pricing</a></li>
-									<li><a href="page-login.html">Login</a></li>
-									<li><a href="page-register.html">Register</a></li>
-									<li><a href="page-404.html">404 Error</a></li>
-									<li><a href="page-left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="page-right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="page-full-width.html">Full Width</a></li>
-									<li><a href="page-empty.html">Empty Page</a></li>
-									<li><a href="page-terms-and-conditions.html">Terms &amp; Conditions</a></li>
+									<li><a href="page-about-us.html">Справка</a></li>
+									<li><a href="page-team.html">Программа</a></li>
+									<li><a href="page-team.html">История мероприятия</a></li>
 								</ul>
 							</li>
 
-							<li class="dropdown">
-								<a class="dropdown-toggle" href="#">FEATURES <i class="fa fa-angle-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="shortcodes-toggles.html">Shortcodes</a></li>
-									<li><a href="feature-typography.html">Typography</a></li>
-									<li><a href="feature-grid.html">Grid</a></li>
-									<li><a href="feature-icons.html">Icons</a></li>
-									<li><a href="feature-header-1.html">Header 1</a></li>
-									<li><a href="feature-header-2.html">Header 2</a></li>
-									<li><a href="feature-header-3.html">Header 3</a></li>
-									<li><a href="feature-header-4.html">Header 4</a></li>
-									<li><a href="feature-top-image.html">Top Image</a></li>
-									<li><a href="feature-top-carousel.html">Top Carousel</a></li>
-									<li class="dropdown">
-										<a href="#">Menu Level #2 <i class="fa fa-angle-right"></i></a>
-										<ul class="dropdown-menu">
-											<li><a href="#">Menu Level #3</a></li>
-										</ul>
-									</li>
-								</ul>
+							<li class="">
+								<%= link_to "ГАЛЕРЕЯ", "/gallery.html", :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="dropdown">
-								<a class="dropdown-toggle" href="#">PORTFOLIO <i class="fa fa-angle-down"></i></a>
-								<ul class="dropdown-menu pull-right">
-									<li><a href="portfolio-2-columns.html">2 Columns</a></li>
-									<li><a href="portfolio-3-columns.html">3 Columns</a></li>
-									<li><a href="portfolio-4-columns.html">4 Columns</a></li>
-									<li><a href="portfolio-fullcenter.html">Fullcenter</a></li>
-									<li><a href="portfolio-single-basic.html">Single Basic</a></li>
-									<li><a href="portfolio-single-slider.html">Single Slider</a></li>
-								</ul>
+							<li class="">
+								<%= link_to "МАГАЗИН", root_path, :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="dropdown">
-								<a class="dropdown-toggle" href="#">SHOP <i class="fa fa-angle-down"></i></a>
-								<ul class="dropdown-menu pull-right">
-									<li><a href="shop-with-sidebar.html">With Sidebar</a></li>
-									<li><a href="shop-without-sidebar.html">Without Sidebar</a></li>
-									<li><a href="shop-single.html">Single Product</a></li>
-									<li><a href="shop-single-sidebar.html">Single Product + Sidebar</a></li>
-									<li><a href="shop-cart.html">Shop Cart</a></li>
-									<li><a href="shop-checkout.html">Shop Checkout</a></li>
-									<li><a href="shop-payment.html">Shop Payment</a></li>
-									<li><a href="page-login.html">Login</a></li>
-									<li><a href="page-register.html">Register</a></li>
-									<li><a href="shop-history.html">Order History</a></li>
-									<li><a href="shop-history-summary.html">Order History Summary</a></li>
-									<li><a href="shop-invoice.html">Invoice</a></li>
-								</ul>
+							<li class="">
+								<%= link_to "ПАРТНЁРЫ", root_path, :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="dropdown">
-								<a class="dropdown-toggle" href="#">BLOG <i class="fa fa-angle-down"></i></a>
-								<ul class="dropdown-menu pull-right">
-									<li><a href="blog-with-sidebar.html">Blog With Sidebar</a></li>
-									<li><a href="blog-without-sidebar.html">Blog Without Sidebar</a></li>
-									<li><a href="blog-single-with-sidebar.html">Blog Single With Sidebar</a></li>
-									<li><a href="blog-single-without-sidebar.html">Blog Single Without Sidebar</a></li>
-								</ul>
+							<li class="">
+								<%= link_to "ИНТЕРАКТИВНАЯ ВЫСТАВКА", root_path, :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="dropdown">
-								<a class="dropdown-toggle" href="#">CONTACT <i class="fa fa-angle-down"></i></a>
-								<ul class="dropdown-menu pull-right">
-									<li><a href="contact-1.html">Contact #1</a></li>
-									<li><a href="contact-2.html">Contact #2</a></li>
-									<li><a href="contact-3.html">Contact #3</a></li>
-									<li><a href="contact-4.html">Contact #4</a></li>
-								</ul>
+							<li class="">
+								<%= link_to "КОНТАКТЫ", "/contacts.html", :class => "dropdown-toggle" %>
 							</li>
 
 						</ul>

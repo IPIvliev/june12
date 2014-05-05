@@ -1,2 +1,99 @@
-<h1>StaticPages#contacts</h1>
-<p>Find me in app/views/static_pages/contacts.html.erb</p>
+		<div id="middle" class="container">
+			<div class="white">
+
+				<header class="page-header">
+					<h1><strong>Свяжитесь</strong> С Нами</h1>
+				</header>
+
+				<div id="gmap"><!-- google map --></div>
+				<script type="text/javascript">
+					var	$googlemap_latitude 	= 56.313933,
+						$googlemap_longitude	= 43.991109,
+						$googlemap_zoom			= 11;
+				</script>
+
+				<hr class="half-margins invisible" />
+
+				<div class="row">
+
+					<!-- FORM -->
+					<div class="col-md-8">
+
+						<form action="#" method="post">
+
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<label>Тема сообщения</label>
+										<input type="text" value="" data-msg-required="Please enter the subject." maxlength="100" class="form-control" name="subject" id="subject">
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-6">
+										<label>Ваше имя *</label>
+										<input type="text" value="" data-msg-required="Please enter your name." maxlength="100" class="form-control" name="name" id="name">
+									</div>
+									<div class="col-md-6">
+										<label>E-mail *</label>
+										<input type="email" value="" data-msg-required="Please enter your email address." data-msg-email="Please enter a valid email address." maxlength="100" class="form-control" name="email" id="email">
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="form-group">
+									<div class="col-md-12">
+										<label>Сообщение *</label>
+										<textarea maxlength="5000" data-msg-required="Please enter your message." rows="10" class="form-control" name="message" id="message"></textarea>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+									<input type="submit" value="Отправить" class="btn btn-primary btn-lg" data-loading-text="Loading...">
+								</div>
+							</div>
+
+						</form>
+					
+					</div>
+					<!-- /FORM -->
+
+
+					<!-- INFO -->
+					<div class="col-md-4">
+
+						<h3><strong>Наши</strong> Координаты</h3>
+
+						<p>
+							Некий текст о том, когда мы работаем, когда к нам можно придти и т.д. и .т.п.
+						</p>
+
+						<div class="divider half-margins"><!-- divider 30px --></div>
+
+						<p>
+							<span class="block"><strong><i class="fa fa-map-marker"></i> Адрес:</strong> г. Нижний Новгород, ул. Ильинская, 109</span>
+							<span class="block"><strong><i class="fa fa-phone"></i> Телефон:</strong> 8-920-293-10-15, 8(831)433-10-50</span>
+							<span class="block"><strong><i class="fa fa-envelope"></i> Email:</strong> <a href="mailto:kreml500@rambler.ru">kreml500@rambler.ru</a></span>
+						</p>
+
+						<div class="divider half-margins"><!-- divider 30px --></div>
+
+						<h4 class="font300">Часы работы</h4>
+						<p>
+							<span class="block"><strong>Пн. - Пт.:</strong> с 10:00 до 19:00</span>
+							<span class="block"><strong>Сб., Вс.:</strong> Выходной</span>
+						</p>
+
+					</div>
+					<!-- /INFO -->
+
+				</div>
+
+
+			</div>
+		</div>
