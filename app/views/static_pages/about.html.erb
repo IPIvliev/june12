@@ -1,2 +1,104 @@
-<h1>StaticPages#about</h1>
-<p>Find me in app/views/static_pages/about.html.erb</p>
+	<div id="middle" class="container">
+			<div class="white">
+
+				<header class="page-header">
+					<h1>Об ассамблеи студенческий инициатив "Виват, Россия!"</h1>
+				</header>
+
+				<!-- INFO ALERT -->
+				<div class="alert alert-default fade in">
+
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Короткое сообщение</strong> &ndash; здесь располагается <strong>для справки</strong>!
+
+				</div>
+				<!-- /INFO ALERT -->
+
+
+				<!-- Why you should chose Alkaline? -->
+				<div class="row">
+
+					<!-- left text -->
+					<div class="col-md-6 col-sm-6">
+
+						<h4>Здравствуйте, друзья!</h4>
+						<p>Здесь будет расположен небольшой текст. <strong>Здесь будет расположен небольшой текст.</strong> Здесь будет расположен небольшой текст.<em>Здесь будет расположен небольшой текст.</em> Здесь будет расположен небольшой текст. <a href="#">ссылка</a> Здесь будет расположен небольшой текст.</p>
+
+						<ul class="list-icon heart-o">
+							<li>Любой может принять участие</li>
+							<li>Проекты ВУЗов</li>
+							<li>Театрализованное представление</li>
+							<li>Шествие по ул. Б. Покровская</li>
+						</ul>
+
+					</div>
+					<!-- /left text -->
+
+					<!-- video -->
+					<div class="col-md-6 col-sm-6">
+
+						<iframe src="http://player.vimeo.com/video/8408210?title=0&amp;byline=0&amp;portrait=0;api=1" width="640" height="360" ></iframe>
+
+					</div>
+					<!-- /video -->
+
+				</div>
+				<!-- /Why you should chose Alkaline? -->
+
+				<div class="divider"><!-- divider --></div>
+
+
+				<!-- POWER -->
+				<article class="row">
+
+					<!-- carousel -->
+					<div class="col-md-6">
+
+						<div class="owl-carousel controlls-over" data-plugin-options='{"items": 1, "singleItem": true, "navigation": true, "pagination": true, "transitionStyle":"fadeUp"}'>
+							<div>
+								<img class="img-responsive" src="/images/bg/4.jpg" width="555" height="311" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="/images/bg/5.jpg" width="555" height="311" alt="">
+							</div>
+							<div>
+								<img class="img-responsive" src="/images/bg/3.jpg" width="555" height="311" alt="">
+							</div>
+						</div>
+
+					</div>
+					<!-- /carousel -->
+
+					<!-- text/progress bar -->
+					<div class="col-md-6">
+
+						<!-- text -->
+						<h4><strong>Справка<em> о мероприятии</em></strong> здесь!</h4>
+						<p>Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.</p>
+						<p>Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.</p>
+						<p>Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.Здесь будет расположен небольшой текст.</p>
+
+						<!-- progress bar -->
+						<div class="progress-label">
+							<span>Количество участников</span>
+						</div>
+						<div class="progress">
+							<div class="progress-bar progress-bar-primary" data-appear-progress-animation="100%" data-appear-animation-delay="300">
+								<span class="progress-bar-tooltip">12 000</span>
+							</div>
+						</div>
+						<!-- /progress bar -->
+
+
+					</div>
+					<!-- /text/progress bar -->
+
+				</article>
+				<!-- /POWER -->
+
+				<hr class="half-margins" />
+
+				<%= render '/shared/partners' %>
+
+			</div>
+		</div>

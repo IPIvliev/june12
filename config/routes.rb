@@ -1,23 +1,24 @@
 June12::Application.routes.draw do
 
   devise_for :users
-
   resources :users
-
-
   resources :products
-
-
   resources :posts
 
-
   get "static_pages/index"
+  get "index.html", :to => "static_pages#index"
 
-  get "static_pages/about"
-
-  get "/contacts.html", :to => "static_pages#contacts"
+  get "/about.html", to: "static_pages#about"
+  get "/program.html", to: "static_pages#program"
+  get "/history.html", to: "static_pages#history"
 
   get "/gallery.html", :to => "static_pages#gallery"
+  get "/partners.html", :to => "static_pages#partners"
+  get "/show.html", :to => "static_pages#show"
+  get "/contacts.html", :to => "static_pages#contacts"
+
+  #Users
+
 
   root :to => 'static_pages#index'
 

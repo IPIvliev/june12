@@ -1,7 +1,7 @@
 		<!-- TOP BAR -->
 		<div id="topBar">
 			<div class="container">
-				<span class="hidden-xs">Добро подаловать: kreml500@rambler.ru</span> 
+				<span class="hidden-xs">Добро пожаловать: kreml500@rambler.ru</span> 
 				8-920-293-10-50
 
 
@@ -12,16 +12,16 @@
 
 					<ul class="dropdown-menu">
 						<li>
-							<a href="page-login.html"><i class="fa fa-user"></i> Логин</a>
+							<%= link_to "<i class='fa fa-user'></i> Логин".html_safe, new_user_session_path %>
 						</li>
 						<li>
-							<a href="page-register.html"><i class="fa fa-key"></i> Регистрация</a>
+							<%= link_to "<i class='fa fa-key'></i> Регистрация".html_safe, new_user_registration_path %>
 						</li>
 						<li class="divider"></li>
 
 						<% if current_user %>
 						<li>
-							<a href="page-account-logout.html"><i class="fa fa-power-off"></i> Выход</a>
+							<%= link_to "<i class='fa fa-power-off'></i> Выход".html_safe, destroy_user_session_path, :method => :delete, :disable_with => "Подождите..." %>
 						</li>
 						<% end %>
 					</ul>
@@ -53,7 +53,7 @@
 			<div class="container">
 
 				<!-- LOGO -->
-				<a href="index.html" class="logo"><img alt="" src="/images/logo.png" height="60" /></a>
+				<a href="/index.html" class="logo"><img alt="" src="/images/logo.png" height="60" /></a>
 				<!-- LOGO -->
 
 				<!-- OPTIONS -->
@@ -61,7 +61,7 @@
 
 					<li>
 						<div class="button topShopCart fa fa-shopping-cart">
-							<span class="items on"><!-- add class "on" for active -->3 items</span>
+							<span class="items on"><!-- add class "on" for active -->3 покупки</span>
 							<div id="topCart" class="nicescroll">
 								<p><b>Total: &euro;1220</b></p>
 								<a href="shop-single.html" class="item">
@@ -105,12 +105,16 @@
 								<%= link_to "ГЛАВНАЯ", root_path, :class => "dropdown-toggle" %>
 							</li>
 
+							<li class="">
+								<%= link_to "НОВОСТИ", posts_path, :class => "dropdown-toggle" %>
+							</li>
+
 							<li class="dropdown">
 								<a class="dropdown-toggle" href="#">О ПРОЕКТЕ <i class="fa fa-angle-down"></i></a>
 								<ul class="dropdown-menu">
-									<li><a href="page-about-us.html">Справка</a></li>
-									<li><a href="page-team.html">Программа</a></li>
-									<li><a href="page-team.html">История мероприятия</a></li>
+									<li><a href="/about.html">Справка</a></li>
+									<li><a href="/program.html">Программа</a></li>
+									<li><a href="/history.html">История мероприятия</a></li>
 								</ul>
 							</li>
 
@@ -119,15 +123,15 @@
 							</li>
 
 							<li class="">
-								<%= link_to "МАГАЗИН", root_path, :class => "dropdown-toggle" %>
+								<%= link_to "МАГАЗИН", products_path, :class => "dropdown-toggle" %>
 							</li>
 
 							<li class="">
-								<%= link_to "ПАРТНЁРЫ", root_path, :class => "dropdown-toggle" %>
+								<%= link_to "ПАРТНЁРЫ", "/partners.html", :class => "dropdown-toggle" %>
 							</li>
 
 							<li class="">
-								<%= link_to "ИНТЕРАКТИВНАЯ ВЫСТАВКА", root_path, :class => "dropdown-toggle" %>
+								<%= link_to "ИНТЕРАКТИВНАЯ ВЫСТАВКА", "/show.html", :class => "dropdown-toggle" %>
 							</li>
 
 							<li class="">
