@@ -13,7 +13,7 @@ gem 'russian'
 gem 'thin'
 
 group :production do
-  gem 'mysql2'
+#  gem 'mysql2'
 end
 
 # Users
