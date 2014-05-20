@@ -15,20 +15,15 @@
 							<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   								
 
-								<!-- alert failed -->
-								<div class="alert alert-danger">
-									<%= devise_error_messages! %>
-								</div>
-
 								<div class="row">
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Имя</label>
-											<input type="text" value="" class="form-control">
+											<%= f.text_field :name, :class => "form-control", :placeholder => "Имя", :required => "required" %>
 										</div>
 										<div class="col-md-6">
 											<label>Фамилия</label>
-											<input type="text" value="" class="form-control">
+											<%= f.text_field :lastname, :class => "form-control", :placeholder => "Фамилия", :required => "required" %>
 										</div>
 									</div>
 								</div>
@@ -36,7 +31,7 @@
 									<div class="form-group">
 										<div class="col-md-12">
 											<label>E-mail</label>
-											<%= f.email_field :email, autofocus: true, :class => "form-control" %>
+											<%= f.email_field :email, autofocus: true, :class => "form-control", :placeholder => "E-mail" %>
 										</div>
 									</div>
 								</div>
@@ -44,11 +39,11 @@
 									<div class="form-group">
 										<div class="col-md-6">
 											<label>Пароль</label>
-											<%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+											<%= f.password_field :password, autocomplete: "off", :class => "form-control", :placeholder => "Пароль" %>
 										</div>
 										<div class="col-md-6">
 											<label>Повторите пароль</label>
-											<%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+											<%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control", :placeholder => "Повторите пароль" %>
 										</div>
 									</div>
 								</div>
@@ -66,13 +61,12 @@
 						<!-- WHY? -->
 						<div class="col-md-6">
 
-							<h4>Моментальная регистрация</h4>
+							<h4>Зарегистрироваться через социальные сети</h4>
 
-							<p>Зарегистрировавшись, вы сможете:</p>
+							<p>Вы можете привязать Ваш аккаунт в социальных сетях:</p>
 							<ul class="list-icon check">
-								<li>Совершать покупки.</li>
-								<li>Общаться с пользователями.</li>
-								<li>Узнавать новости.</li>
+								<li><%= link_to "Вконтакте", "/index.html" %></li>
+								<li><%= link_to "Facebook", "/index.html" %></li>
 							</ul>
 
 

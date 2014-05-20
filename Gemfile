@@ -12,13 +12,18 @@ gem "breadcrumbs_on_rails"
 gem 'russian'
 gem 'thin'
 
+# Shop
+gem 'rails_admin'
+
 group :production do
 #  gem 'mysql2'
 end
 
 # Users
 gem 'devise'
-gem 'axlsx_rails'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
 
 # Design
 gem 'css3-progress-bar-rails'
