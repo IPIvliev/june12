@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(:version => 20140520133007) do
   create_table "posts", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.string   "text"
+    t.text     "text",       :limit => 4294967295
     t.string   "picture"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "products", :force => true do |t|

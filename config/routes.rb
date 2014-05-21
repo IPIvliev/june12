@@ -25,4 +25,7 @@ June12::Application.routes.draw do
 
   root :to => 'static_pages#index'
 
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
+
 end

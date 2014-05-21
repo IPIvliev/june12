@@ -3,7 +3,7 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.string :name
       t.integer :user_id
-      t.string :text
+      t.text :text, :limit => 4294967295
       t.string :picture
 
       t.timestamps

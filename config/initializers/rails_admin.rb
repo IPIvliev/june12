@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 # RailsAdmin config file. Generated on May 20, 2014 17:30
 # See github.com/sferik/rails_admin for more informations
 
@@ -7,7 +9,7 @@ RailsAdmin.config do |config|
   ################  Global configuration  ################
 
   # Set the admin name here (optional second array element will appear in red). For example:
-  config.main_app_name = ['June12', 'Admin']
+  config.main_app_name = ['Ассамблея студенческих инициатив "Виват, Россия!"', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
@@ -20,5 +22,25 @@ RailsAdmin.config do |config|
   end
   config.current_user_method &:current_user
 
+
+  # Edit Post model
+    config.model Post do
+
+      edit do
+        # For RailsAdmin >= 0.5.0
+        # field :description, :ck_editor
+        # For RailsAdmin < 0.5.0
+        field :name do
+          label "Название"
+        end
+        field :text do
+          label "Текст"
+          ckeditor true
+        end
+        field :picture, :carrierwave do
+          label "Изображение"
+        end
+      end
+    end
 
 end

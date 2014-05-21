@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'will_paginate', '3.0.3'
-gem 'bootstrap-will_paginate', '0.0.6'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -39,7 +38,7 @@ gem  'rest-client'
 
 # Images
 gem 'carrierwave'
-gem 'rmagick', '2.13.2'
+gem 'rmagick', '2.13.2', require: false
 
 # Gems used only for assets and not required
 # in production environments by default.
