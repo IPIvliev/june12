@@ -28,6 +28,23 @@ RailsAdmin.config do |config|
 
       label_plural "Новости"
       weight 1
+
+      list do
+
+        field :name do
+          label "Название"
+        end
+
+        field :text do
+          label "Содержание"
+        end
+
+        field :picture do
+          label "Изображение"
+        end
+
+      end
+
       edit do
 
         field :name do
@@ -77,5 +94,24 @@ RailsAdmin.config do |config|
 
       end
     end
+
+    config.model Photo do
+      label_plural 'Галерея'
+    edit do
+
+      field :name do
+        label "Название"
+      end
+
+      field :image, :carrierwave do
+        label "Изображение"
+      end
+
+      fields_of_type :tag_list do
+        partial 'tag_list_with_suggestions'
+      end
+
+    end
+  end
 
 end

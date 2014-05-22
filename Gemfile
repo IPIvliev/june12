@@ -13,7 +13,8 @@ gem 'thin'
 
 # Admin panel
 gem 'rails_admin'
-# gem 'rails_admin_toggleable'
+gem 'acts-as-taggable-on'
+gem 'rails_admin_tag_list'
 
 group :production do
 #  gem 'mysql2'

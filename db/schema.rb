@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140520133007) do
+ActiveRecord::Schema.define(:version => 20140522132057) do
 
   create_table "orders", :force => true do |t|
     t.decimal  "totalprice",                 :precision => 9, :scale => 2
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(:version => 20140520133007) do
     t.boolean  "paid",                                                     :default => false
     t.datetime "created_at",                                                                  :null => false
     t.datetime "updated_at",                                                                  :null => false
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|
@@ -55,6 +62,24 @@ ActiveRecord::Schema.define(:version => 20140520133007) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       :limit => 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], :name => "taggings_idx", :unique => true
+
+  create_table "tags", :force => true do |t|
+    t.string "name"
+  end
+
+  add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "name"

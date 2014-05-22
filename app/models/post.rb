@@ -10,4 +10,6 @@ class Post < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  paginates_per 5
 end

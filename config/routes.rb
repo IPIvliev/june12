@@ -1,5 +1,8 @@
 June12::Application.routes.draw do
 
+  resources :photos
+
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   devise_for :users
