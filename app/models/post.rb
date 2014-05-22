@@ -7,4 +7,7 @@ class Post < ActiveRecord::Base
   attr_accessible :picture, :picture_cache, :remove_picture
 
   belongs_to :user
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
 end

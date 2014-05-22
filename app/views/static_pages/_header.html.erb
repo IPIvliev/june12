@@ -3,7 +3,7 @@
 			<div class="container">
 				<span class="hidden-xs">Добро пожаловать: kreml500@rambler.ru</span> 
 				8-920-293-10-50
-				
+
 				<% if current_user %>
 					<span class=" pull-right"><%= "Здравствуйте, #{current_user.name}" %> </span> 
   
@@ -109,7 +109,7 @@
 						<ul class="nav nav-pills nav-main scroll-menu" id="topMain">
 
 							<li class="active">
-								<%= link_to "ГЛАВНАЯ", root_path, :class => "dropdown-toggle" %>
+								<%= link_to "ГЛАВНАЯ", "/index.html", :class => "dropdown-toggle" %>
 							</li>
 
 							<li class="">

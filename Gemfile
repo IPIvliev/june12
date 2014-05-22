@@ -35,6 +35,7 @@ gem 'activemerchant', :require => 'active_merchant'
 # Blog
 gem 'ckeditor'
 gem 'truncate_html'
+gem 'friendly_id'
 
 # Work with API
 gem  'rest-client'
