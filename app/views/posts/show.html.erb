@@ -1,25 +1,106 @@
-<p id="notice"><%= notice %></p>
+    <!-- BLOG -->
+    <link href="/css/blog.css" rel="stylesheet" type="text/css" />
 
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+		<div id="middle" class="container">
+			<div class="white">
 
-<p>
-  <b>User:</b>
-  <%= @post.user_id %>
-</p>
+				<header class="page-header">
+					<h1><%= @post.name %></h1>
+					<span class="label label-default light"><%= Russian::strftime(@post.created_at, "%d %B, %Y") %></span>
+				</header>
 
-<p>
-  <b>Text:</b>
-  <%= @post.text %>
-</p>
+				<div id="blog" class="row">
 
-<p>
-  <b>Picture:</b>
-  <%= @post.picture %>
-</p>
+					<!-- LEFT COLUMN -->
+					<div class="col-md-9">
+
+						
+						<%= image_tag @post.picture_url, :class => "img-responsive", :alt => "#{@post.name}" %>
+
+						<!-- article content -->
+						<article>
+							<p class="dropcap"><%= @post.text.html_safe %></p>
+						</article>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+						<!-- SOCIAL -->
+						<p class="socials">
+							<a href="#" class="rounded-icon social fa fa-facebook"><!-- facebook --></a>
+							<a href="#" class="rounded-icon social fa fa-twitter"><!-- twitter --></a>
+							<a href="#" class="rounded-icon social fa fa-google-plus"><!-- google plus --></a>
+							<a href="#" class="rounded-icon social fa fa-pinterest"><!-- pinterest --></a>
+							<a href="#" class="rounded-icon social fa fa-linkedin"><!-- linkedin --></a>
+						</p>
+
+					<%= link_to "Назад", :back %>
+						<div class="divider half-margins"><!-- divider 30px --></div>
+
+
+
+					</div>
+					<!-- /LEFT COLUMN -->
+
+
+					<!-- RIGHT COLUMN -->
+					<div class="col-md-3">
+
+
+						<!-- blog search -->
+						<div class="widget">
+
+							<h3>ПОИСК</h3>
+
+							<form method="get" action="#" class="input-group">
+								<input type="text" class="form-control" name="s" id="s" value="" placeholder="Искать" />
+								<span class="input-group-btn">
+									<button class="btn btn-primary"><i class="fa fa-search"></i></button>
+								</span>
+							</form>
+						</div>
+
+
+
+						<!-- RECENT,POPULAR -->
+						<div class="widget">
+
+							<!-- TABS -->
+							<div class="tabs nomargin-top">
+
+								<!-- tabs -->
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a href="#tab1" data-toggle="tab">
+											Последние новости
+										</a>
+									</li>
+
+								</ul>
+
+								<!-- tabs content -->
+								<div class="tab-content">
+									<div id="tab1" class="tab-pane active">
+
+										<ul>
+											<% Post.order("created_at DESC").limit(5).each do |post| %>
+											<li><%= link_to "<i class='fa fa-sign-out'></i> #{post.name}".html_safe, post %><small><%= Russian::strftime(post.created_at, "%d %B %Y / %H:%M") %></small></li>
+											<% end %>
+										</ul>
+									</div>
+								</div>
+
+							</div>
+							<!-- /TABS -->
+
+						</div>
+						<!-- /RECENT,POPULAR -->
+
+
+
+
+					</div>
+					<!-- /RIGHT COLUMN -->
+
+				</div>
+
+			</div>
+		</div>

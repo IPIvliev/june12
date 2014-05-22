@@ -11,8 +11,9 @@ gem "breadcrumbs_on_rails"
 gem 'russian'
 gem 'thin'
 
-# Shop
+# Admin panel
 gem 'rails_admin'
+# gem 'rails_admin_toggleable'
 
 group :production do
 #  gem 'mysql2'
@@ -23,6 +24,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
+gem 'cancan'
 
 # Design
 gem 'css3-progress-bar-rails'
@@ -32,6 +34,7 @@ gem 'activemerchant', :require => 'active_merchant'
 
 # Blog
 gem 'ckeditor'
+gem 'truncate_html'
 
 # Work with API
 gem  'rest-client'

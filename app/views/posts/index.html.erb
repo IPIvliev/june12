@@ -14,58 +14,32 @@
           <!-- LEFT COLUMN -->
           <div class="col-md-9">
 
+          <% Post.order("created_at DESC").each do |post| %>
             <!-- blog item -->
             <div class="item">
 
               <!-- article title -->
               <div class="item-title">
-                <h2><a href="#">Заголовок первой новости</a></h2>
+                <h2><%= link_to post.name, post %></h2>
                 
-                <span class="label label-default light">12 мая, 2014</span> 
+                <span class="label label-default light"><%= Russian::strftime(post.created_at, "%d %B, %Y") %></span> 
               </div>
 
               <!-- image -->
               <figure>
-                <img src="/images/bg/1.jpg" class="img-responsive" alt="img" />
+                <%= image_tag post.picture_url, :class => "img-responsive", :alt => "#{post.name}" %>
               </figure>
 
               <!-- blog short preview -->
-              <p>
-                Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. 
-              </p>
+                <%= truncate_html(post.text, length: 350, omission: '...') %>
 
               <!-- read more button -->
-              <a href="#" class="btn btn-xs"><i class="fa fa-sign-out"></i> ЧИТАТЬ ПОЛНОСТЬЮ</a>
+              <%= link_to "<i class='fa fa-sign-out'></i> ЧИТАТЬ ПОЛНОСТЬЮ".html_safe, post, :class => "btn btn-xs" %>
 
             </div>
             <!-- /blog item -->
 
-
-            <!-- blog item -->
-            <div class="item">
-
-              <!-- article title -->
-              <div class="item-title">
-                <h2><a href="#">Заголовок второй новости</a></h2>
-                
-                <span class="label label-default light">14 мая, 2014</span> 
-              </div>
-
-              <!-- image -->
-              <figure>
-                <img src="/images/bg/2.jpg" class="img-responsive" alt="img" />
-              </figure>
-
-              <!-- blog short preview -->
-              <p>
-                Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. Здесь будет расположен небольшой текст. 
-              </p>
-
-              <!-- read more button -->
-              <a href="#" class="btn btn-xs"><i class="fa fa-sign-out"></i> ЧИТАТЬ ПОЛНОСТЬЮ</a>
-
-            </div>
-            <!-- /blog item -->
+            <% end %>
 
 
             <!-- PAGINATION -->
@@ -126,8 +100,9 @@
                   <div id="tab1" class="tab-pane active">
 
                     <ul>
-                      <li><a href="#"><i class="fa fa-sign-out"></i> Заголовок первой новости</a> <small>12 мая 2014 / 12:43</small></li>
-                      <li><a href="#"><i class="fa fa-sign-out"></i> Заголовок второй новости</a> <small>13 мая 2014 / 12:43</small></li>
+                      <% Post.order("created_at DESC").limit(5).each do |post| %>
+                      <li><%= link_to "<i class='fa fa-sign-out'></i> #{post.name}".html_safe, post %><small><%= Russian::strftime(post.created_at, "%d %B %Y / %H:%M") %></small></li>
+                      <% end %>
                     </ul>
                   </div>
                 </div>

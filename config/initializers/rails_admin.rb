@@ -4,32 +4,32 @@
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
-
-
-  ################  Global configuration  ################
-
   # Set the admin name here (optional second array element will appear in red). For example:
   config.main_app_name = ['Ассамблея студенческих инициатив "Виват, Россия!"', 'Admin']
   # or for a more dynamic name:
   # config.main_app_name = Proc.new { |controller| [Rails.application.engine_name.titleize, controller.params['action'].titleize] }
 
+  # Roles
+  config.authorize_with :cancan
+
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
-
 
   config.authenticate_with do
     warden.authenticate! scope: :user
   end
   config.current_user_method &:current_user
 
+  # History
+  config.audit_with :history, User
 
   # Edit Post model
     config.model Post do
 
+      label_plural "Новости"
+      weight 1
       edit do
-        # For RailsAdmin >= 0.5.0
-        # field :description, :ck_editor
-        # For RailsAdmin < 0.5.0
+
         field :name do
           label "Название"
         end
@@ -40,6 +40,41 @@ RailsAdmin.config do |config|
         field :picture, :carrierwave do
           label "Изображение"
         end
+      end
+    end
+
+    # Edit User model
+    config.model User do
+      label_plural 'Пользователи'
+      weight 2
+
+      edit do
+        include_all_fields
+        field :name do
+          label "Имя"
+        end
+        exclude_fields :created_at, :reset_password_sent_at, :remember_created_at, :sign_in_count, :current_sign_in_at,
+        :last_sign_in_at, :updated_at, :current_sign_in_ip, :last_sign_in_ip, :posts
+      end
+
+    end
+
+    # Edit Order model
+    config.model Order do
+      label_plural 'Заказы'
+      weight 4
+      edit do
+
+      end
+    end
+
+    # Edit Product model
+    config.model Product do
+      
+      label_plural 'Товары'
+      weight 3
+      edit do
+
       end
     end
 

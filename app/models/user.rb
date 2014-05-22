@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :lastname, :name, :phone, :role
 
+  ROLES = %w[admin manager]
+
   has_many :posts
 end
