@@ -15,7 +15,7 @@
 
               <div class="row top-shop-option">
                 <div class="col-sm-6 col-md-6">
-                  <p>Показано 12 товаров из 17</p>
+
                 </div>
                 <div class=" col-sm-6 col-md-6">
                   <select class="pointer fsize13 pull-right" name="orderby">
@@ -29,118 +29,28 @@
             
               <div class="row">
 
+                <% @products.each do |product| %>
                 <!-- items -->
                 <div class="col-sm-6 col-md-4"><!-- item -->
                   <div class="item-box">
                     <figure>
-                      <a class="item-hover" href="shop-single-sidebar.html">
+                      <a class="item-hover" href="<%= product_path(product) %>">
                         <span class="overlay"></span>
                         <span class="inner">
                           <strong>Просмотр</strong> Товаров
                         </span>
                       </a>
                       <a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> В КОРЗИНУ</a>
-                      <img class="img-responsive" src="/images/shop/short.jpg" width="260" height="260" alt="">
+                      <%= image_tag product.show_url, :class => "img-responsive", :alt => "#{product.name}" %>
                     </figure>
                     <div class="item-box-desc">
-                      <h4>Футболка</h4>
-                      <small class="styleColor">550 руб.</small>
+                      <h4><%= product.name %></h4>
+                      <small class="styleColor"><%= product.price %></small>
                     </div>
                   </div>
-                </div>                <div class="col-sm-6 col-md-4"><!-- item -->
-                  <div class="item-box">
-                    <figure>
-                      <a class="item-hover" href="shop-single-sidebar.html">
-                        <span class="overlay"></span>
-                        <span class="inner">
-                          <strong>Просмотр</strong> Товаров
-                        </span>
-                      </a>
-                      <a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> В КОРЗИНУ</a>
-                      <img class="img-responsive" src="/images/shop/short.jpg" width="260" height="260" alt="">
-                    </figure>
-                    <div class="item-box-desc">
-                      <h4>Футболка</h4>
-                      <small class="styleColor">550 руб.</small>
-                    </div>
-                  </div>
-                </div>
+                </div> 
 
-                                <div class="col-sm-6 col-md-4"><!-- item -->
-                  <div class="item-box">
-                    <figure>
-                      <a class="item-hover" href="shop-single-sidebar.html">
-                        <span class="overlay"></span>
-                        <span class="inner">
-                          <strong>Просмотр</strong> Товаров
-                        </span>
-                      </a>
-                      <a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> В КОРЗИНУ</a>
-                      <img class="img-responsive" src="/images/shop/short.jpg" width="260" height="260" alt="">
-                    </figure>
-                    <div class="item-box-desc">
-                      <h4>Футболка</h4>
-                      <small class="styleColor">550 руб.</small>
-                    </div>
-                  </div>
-                </div>
-
-                                <div class="col-sm-6 col-md-4"><!-- item -->
-                  <div class="item-box">
-                    <figure>
-                      <a class="item-hover" href="shop-single-sidebar.html">
-                        <span class="overlay"></span>
-                        <span class="inner">
-                          <strong>Просмотр</strong> Товаров
-                        </span>
-                      </a>
-                      <a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> В КОРЗИНУ</a>
-                      <img class="img-responsive" src="/images/shop/short.jpg" width="260" height="260" alt="">
-                    </figure>
-                    <div class="item-box-desc">
-                      <h4>Футболка</h4>
-                      <small class="styleColor">550 руб.</small>
-                    </div>
-                  </div>
-                </div>
-                                <div class="col-sm-6 col-md-4"><!-- item -->
-                  <div class="item-box">
-                    <figure>
-                      <a class="item-hover" href="shop-single-sidebar.html">
-                        <span class="overlay"></span>
-                        <span class="inner">
-                          <strong>Просмотр</strong> Товаров
-                        </span>
-                      </a>
-                      <a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> В КОРЗИНУ</a>
-                      <img class="img-responsive" src="/images/shop/short.jpg" width="260" height="260" alt="">
-                    </figure>
-                    <div class="item-box-desc">
-                      <h4>Футболка</h4>
-                      <small class="styleColor">550 руб.</small>
-                    </div>
-                  </div>
-                </div>
-
-                                <div class="col-sm-6 col-md-4"><!-- item -->
-                  <div class="item-box">
-                    <figure>
-                      <a class="item-hover" href="shop-single-sidebar.html">
-                        <span class="overlay"></span>
-                        <span class="inner">
-                          <strong>Просмотр</strong> Товаров
-                        </span>
-                      </a>
-                      <a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> В КОРЗИНУ</a>
-                      <img class="img-responsive" src="/images/shop/short.jpg" width="260" height="260" alt="">
-                    </figure>
-                    <div class="item-box-desc">
-                      <h4>Футболка</h4>
-                      <small class="styleColor">550 руб.</small>
-                    </div>
-                  </div>
-                </div>
-                <!-- items -->
+                <% end %>
 
               </div>
 
@@ -148,7 +58,7 @@
               <div class="row">
 
                 <div class="col-md-6 text-left">
-                  <p class="hidden-xs pull-left nomargin padding20">Показано 12 товаров из 17</p>
+
                 </div>
 
                 <div class="col-md-6 responsive-text-center text-right">

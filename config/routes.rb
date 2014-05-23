@@ -9,6 +9,8 @@ June12::Application.routes.draw do
   #, :path => '', :path_names => {:sign_in => 'admin'}
   resources :users
   resources :products
+
+  get 'tags/:tag', to: 'posts#index', as: :tag
   resources :posts
 
   get "static_pages/index"
@@ -18,7 +20,6 @@ June12::Application.routes.draw do
   get "/program.html", to: "static_pages#program"
   get "/history.html", to: "static_pages#history"
 
-  get "/gallery.html", :to => "static_pages#gallery"
   get "/partners.html", :to => "static_pages#partners"
   get "/show.html", :to => "static_pages#show"
   get "/contacts.html", :to => "static_pages#contacts"

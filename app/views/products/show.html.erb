@@ -1,25 +1,213 @@
-<p id="notice"><%= notice %></p>
+		<div id="middle" class="container">
+			<div class="white">
 
-<p>
-  <b>Name:</b>
-  <%= @product.name %>
-</p>
+				<header class="page-header">
+					<h1>Lady Pink Shoes</h1>
+				</header>
 
-<p>
-  <b>Description:</b>
-  <%= @product.description %>
-</p>
+					<div id="shop" class="row">
 
-<p>
-  <b>Show:</b>
-  <%= @product.show %>
-</p>
+						<div class="col-md-9">
 
-<p>
-  <b>Work:</b>
-  <%= @product.work %>
-</p>
+							<div class="row">
+								<div class="col-sm-6 col-md-6">
+									<div class="owl-carousel controlls-over product-image" data-plugin-options='{"items": 1, "singleItem": true, "navigation": true, "pagination": true, "transitionStyle":"fadeUp"}'>
+										<div>
+											<img alt="" class="img-responsive" src="assets/images/demo/shop/4.jpg">
+										</div>
+										<div>
+											<img alt="" class="img-responsive" src="assets/images/demo/shop/view2.jpg">
+										</div>
+										<div>
+											<img alt="" class="img-responsive" src="assets/images/demo/shop/view3.jpg">
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6 col-md-6">
+
+									<!-- product detail -->
+									<form class="form-inline productDescription noajax" method="get" action="shop-cart.html" role="form">
+
+										<!-- hidden fields -->
+										<input type="hidden" name="action" value="cart_add" />
+										<input type="hidden" name="product_id" value="1" />
+
+										<!-- product unique code -->
+										<span class="code">PART NUMBER: 0F3DSS</span>
+										<!-- /product unique code -->
+
+										<!-- product price -->
+										<div class="productRowInfo">
+											<span class="price styleSecondColor fsize20">$40.00</span>
+											<span class="oldprice">$43.00</span>
+										</div>
+										<!-- /product price -->
 
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+										<div class="row">
+
+											<!-- product color -->
+											<div class="col-md-6 col-sm-6">
+												<label class="block" for="product_color">Color</label>
+												<select class="form-control pointer fullwidth" name="product_color" id="product_color">
+													<option value="red">Red</option>
+													<option value="blue">Blue</option>
+													<option value="cherry">Cherry</option>
+												</select>
+											</div>
+											<!-- /product color -->
+
+											<!-- product size -->
+											<div class="col-md-6 col-sm-6">
+												<label class="block" for="product_size">Size</label>
+												<select class="form-control pointer fullwidth" name="product_size" id="product_size">
+													<option value="l">L</option>
+													<option value="m">M</option>
+													<option value="xxl">XXL</option>
+												</select>
+											</div>
+											<!-- /product size -->
+
+										</div>
+
+
+										<br />
+
+
+										<button id="addToCartBtn" class="btn btn-primary fullwidth"><i class="fa fa-shopping-cart"></i> ADD TO CART</button>
+
+
+										<!-- product description -->
+										<div class="desc">
+											<h3 class="page-header">DESCRIPTION</h3>
+											<p>
+												Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen.
+											</p>
+										</div>
+										<!-- /product description -->
+
+
+									</form>
+									<!-- product detail -->
+
+								</div>
+							</div>
+
+
+							<hr />
+
+
+							<!-- RELATED -->
+							<h3><strong>Related</strong> Products</h3>
+							<div class="row">
+
+								<div class="col-sm-6 col-md-4"><!-- item -->
+									<div class="item-box">
+										<figure>
+											<a class="item-hover" href="shop-single-sidebar.html">
+												<span class="overlay"></span>
+												<span class="inner">
+													<strong>VIEW</strong> PRODUCT
+												</span>
+											</a>
+											<a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> ADD TO CART</a>
+											<img class="img-responsive" src="assets/images/demo/shop/2.jpg" width="260" height="260" alt="">
+										</figure>
+										<div class="item-box-desc">
+											<h4>Black Shoes</h4>
+											<small class="styleColor"><span>$180</span> $150</small>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6 col-md-4"><!-- item -->
+									<div class="item-box">
+										<figure>
+											<a class="item-hover" href="shop-single-sidebar.html">
+												<span class="overlay"></span>
+												<span class="inner">
+													<strong>VIEW</strong> PRODUCT
+												</span>
+											</a>
+											<a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> ADD TO CART</a>
+											<img class="img-responsive" src="assets/images/demo/shop/3.jpg" width="260" height="260" alt="">
+										</figure>
+										<div class="item-box-desc">
+											<h4>James Bond Watch - Titanium Case</h4>
+											<small class="styleColor"><span>$180</span> $150</small>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-6 col-md-4"><!-- item -->
+									<div class="item-box">
+										<figure>
+											<a class="item-hover" href="shop-single-sidebar.html">
+												<span class="overlay"></span>
+												<span class="inner">
+													<strong>VIEW</strong> PRODUCT
+												</span>
+											</a>
+											<a href="shop-cart.html?action=cart_add&amp;product_id=1&amp;product_color=red&amp;product_size=l&amp;product_qty=1" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> ADD TO CART</a>
+											<img class="img-responsive" src="assets/images/demo/shop/4.jpg" width="260" height="260" alt="">
+										</figure>
+										<div class="item-box-desc">
+											<h4>Pink Lady Shoes</h4>
+											<small class="styleColor"><span>$180</span> $150</small>
+										</div>
+									</div>
+								</div>
+
+							</div>
+							<!-- /RELATED -->
+
+						</div><!-- /col-md-9 -->
+
+						<aside class="col-md-3">
+							<h3>CATEGORIES</h3><!-- h3 - have no margin-top -->
+							<ul class="nav nav-list">
+								<li><a href="#"><i class="fa fa-angle-right"></i> Men</a></li>
+								<li class="active"><a href="#"><i class="fa fa-angle-right"></i> Women</a></li>
+								<li><a href="#"><i class="fa fa-angle-right"></i> Kids</a></li>
+								<li><a href="#"><i class="fa fa-angle-right"></i> Garden Tools</a></li>
+								<li><a href="#"><i class="fa fa-angle-right"></i> Books</a></li>
+							</ul>
+
+							<!-- SHOP FILTERS -->
+							<form method="get" action="#">
+
+								<!-- price slider -->
+								<h4>Price</h4>
+
+								<div class="price-slider layout-slider">
+									<input id="Slider2" type="slider" name="price" value="10;300" />
+								</div>
+								<script type="text/javascript" charset="utf-8">
+									var slider_config = { from: 10, to: 500, heterogeneity: ['50/100', '75/250'], step: 10, dimension: '&nbsp;$', skin: 'round_plastic' };
+								</script>
+								<!-- /price slider -->
+
+								<h4>Size</h4>
+								<label class="block pointer font400"><input type="checkbox" /> XL</label>
+								<label class="block pointer font400"><input type="checkbox" /> XXL</label>
+								<label class="block pointer font400"><input type="checkbox" /> XXL</label>
+
+								<h4>Color</h4>
+								<label class="block pointer font400"><input type="checkbox" checked="checked" /> Red</label>
+								<label class="block pointer font400"><input type="checkbox" checked="checked" /> Blue</label>
+								<label class="block pointer font400"><input type="checkbox" checked="checked" /> Green</label>
+
+								<hr class="half-margins" />
+
+								<button class="btn btn-default">APPLY FILTER</button>
+							</form>
+							<!-- /SHOP FILTERS -->
+
+						</aside>
+
+					</div><!-- /row -->
+
+
+			</div>
+		</div>

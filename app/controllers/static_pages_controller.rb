@@ -8,6 +8,4 @@ class StaticPagesController < ApplicationController
   def contacts
   end
 
-  def gallery
-  end
 end

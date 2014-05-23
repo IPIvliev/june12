@@ -43,11 +43,11 @@ ActiveRecord::Schema.define(:version => 20140522132057) do
 
   create_table "products", :force => true do |t|
     t.string   "name"
-    t.string   "description"
+    t.text     "description", :limit => 2000
     t.string   "show"
     t.boolean  "work"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "rails_admin_histories", :force => true do |t|

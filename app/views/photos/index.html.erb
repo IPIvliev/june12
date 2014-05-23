@@ -1,25 +1,83 @@
-<h1>Listing photos</h1>
+    <div id="middle" class="container">
+      <div class="white">
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Image</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+        <header class="page-header">
+          <h1><strong>Галерея</strong> Мероприятия</h1>
+        </header>
 
-<% @photos.each do |photo| %>
-  <tr>
-    <td><%= photo.name %></td>
-    <td><%= photo.image %></td>
-    <td><%= link_to 'Show', photo %></td>
-    <td><%= link_to 'Edit', edit_photo_path(photo) %></td>
-    <td><%= link_to 'Destroy', photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
+        <!-- PORTFOLIO -->
+        <section id="portfolio">
 
-<%= link_to 'New Photo', new_photo_path %>
+          <p class="lead">Нектороый текст с описанием мероприятия и галереи. Например, кто и когда фотографировал. Приглашение сделать фоторепортаж в этом году.</p>
+
+          <div class="row">
+            <div class="col-md-12">
+
+              <ul class="nav nav-pills isotope-filter isotope-filter noborder pull-right" data-sort-id="isotope-list" data-option-key="filter">
+                <li data-option-value="*" class="active"><a href="#">Все</a></li>
+                <li data-option-value=".2013"><a href="#">2013 год</a></li>
+                <li data-option-value=".2012"><a href="#">2012 год</a></li>
+                <li data-option-value=".2011"><a href="#">2011 год</a></li>
+              </ul>
+
+            </div>
+          </div>
+
+
+          <div class="row">
+
+            <ul class="sort-destination isotope" data-sort-id="isotope-list">
+            <% Photo.order("created_at DESC").each do |photo| %>
+              <li class="isotope-item col-sm-4 col-md-4 <%= photo.tag_list.join(" ") %>"><!-- item -->
+                <div class="item-box">
+                  <figure>
+                    <a class="item-hover" data-toggle="modal" data-target="#<%= photo.id %>">
+                      <span class="overlay"></span>
+                      <span class="inner">
+                        <strong>Открыть</strong> Изображение
+                      </span>
+                    </a>
+                    <%= image_tag photo.image_url, :alt => "#{photo.name}" %>
+                  </figure>
+                  <div class="item-box-desc">
+                    <h4><%= photo.name %></h4>
+                    <small class="styleColor"><%= Russian::strftime(photo.created_at, "%d %B %Y") %></small>
+                  </div>
+                </div>
+
+              </li>
+
+              <!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><%= photo.name %></h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag photo.image_url %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <% end %>
+            </ul>
+
+
+          </div><!-- /.masonry-container -->
+
+<%= render '/shared/doit' %>
+
+
+        </section>
+        <!-- /PORTFOLIO -->
+
+
+
+      </div>
+    </div>

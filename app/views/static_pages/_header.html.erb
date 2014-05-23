@@ -5,12 +5,14 @@
 				8-920-293-10-50
 
 				<% if current_user %>
-					<span class=" pull-right"><%= "Здравствуйте, #{current_user.name}" %> </span> 
-  
+				<div class="btn-group pull-right">
+					<span class=" pull-right"><%= " Здравствуйте, #{current_user.name}" %> </span> 
+  					<%= link_to "<i class='fa fa-power-off'></i> Выход".html_safe, destroy_user_session_path, :method => :delete, :disable_with => "Подождите..." %>
 					<% if current_user.role == "admin" %>
-						<%= link_to 'Admin', rails_admin_path %></li>
+						| <%= link_to 'Admin', rails_admin_path, :target => "_blank" %></li> | 
 					<% end %>
-				<% end %>
+				</div>
+				<% else %>
 
 				<div class="btn-group pull-right">
 					<button class="dropdown-toggle language" type="button" data-toggle="dropdown">
@@ -33,6 +35,8 @@
 						<% end %>
 					</ul>
 				</div>
+
+				<% end %>
 
 
 				<!-- 
@@ -108,15 +112,15 @@
 					<nav class="nav-main">
 						<ul class="nav nav-pills nav-main scroll-menu" id="topMain">
 
-							<li class="active">
+							<li class="<%=is_active('static_pages', 'index')%>">
 								<%= link_to "ГЛАВНАЯ", "/index.html", :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="">
+							<li class="<%=is_active('posts', 'index')%>">
 								<%= link_to "НОВОСТИ", posts_path, :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="dropdown">
+							<li class="dropdown <%=is_active('static_pages', 'about')%>">
 								<a class="dropdown-toggle" href="#">О ПРОЕКТЕ <i class="fa fa-angle-down"></i></a>
 								<ul class="dropdown-menu">
 									<li><a href="/about.html">Справка</a></li>
@@ -125,23 +129,23 @@
 								</ul>
 							</li>
 
-							<li class="">
-								<%= link_to "ГАЛЕРЕЯ", "/gallery.html", :class => "dropdown-toggle" %>
+							<li class="<%=is_active('photos', 'index')%>">
+								<%= link_to "ГАЛЕРЕЯ", photos_path, :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="">
+							<li class="<%=is_active('products', 'index')%>">
 								<%= link_to "МАГАЗИН", products_path, :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="">
+							<li class="<%=is_active('static_pages', 'partners')%>">
 								<%= link_to "ПАРТНЁРЫ", "/partners.html", :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="">
+							<li class="<%=is_active('static_pages', 'show')%>">
 								<%= link_to "ИНТЕРАКТИВНАЯ ВЫСТАВКА", "/show.html", :class => "dropdown-toggle" %>
 							</li>
 
-							<li class="">
+							<li class="<%=is_active('static_pages', 'contacts')%>">
 								<%= link_to "КОНТАКТЫ", "/contacts.html", :class => "dropdown-toggle" %>
 							</li>
 

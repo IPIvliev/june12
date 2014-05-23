@@ -7,5 +7,5 @@ class Photo < ActiveRecord::Base
   attr_accessible :image, :image_cache, :remove_image
 
   acts_as_taggable
-  acts_as_taggable_on :skills
+  # acts_as_taggable_on :skills
 end

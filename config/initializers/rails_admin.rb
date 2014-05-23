@@ -43,6 +43,10 @@ RailsAdmin.config do |config|
           label "Изображение"
         end
 
+        field :tags do
+          label "Тэги"
+        end
+
       end
 
       edit do
@@ -57,13 +61,14 @@ RailsAdmin.config do |config|
         field :picture, :carrierwave do
           label "Изображение"
         end
+        field :tag_list
       end
     end
 
     # Edit User model
     config.model User do
       label_plural 'Пользователи'
-      weight 2
+      weight 3
 
       edit do
         include_all_fields
@@ -79,7 +84,7 @@ RailsAdmin.config do |config|
     # Edit Order model
     config.model Order do
       label_plural 'Заказы'
-      weight 4
+      weight 5
       edit do
 
       end
@@ -89,14 +94,50 @@ RailsAdmin.config do |config|
     config.model Product do
       
       label_plural 'Товары'
-      weight 3
+      weight 4
       edit do
 
+        field :name do
+          label "Название"
+        end
+        field :description do
+          label "Описание"
+          ckeditor true
+        end
+        field :show, :carrierwave do
+          label "Изображение"
+        end
+        field :tag_list
+
+        field :price do
+          label "Цена"
+        end
+
+        field :work do
+          label "В продаже"
+        end
       end
     end
 
+
     config.model Photo do
       label_plural 'Галерея'
+      weight 2
+
+    list do
+        field :name do
+          label "Название"
+        end
+
+        field :tags do
+          label "Тэги"
+        end
+
+        field :image do
+          label "Изображение"
+        end
+    end
+
     edit do
 
       field :name do
@@ -107,9 +148,7 @@ RailsAdmin.config do |config|
         label "Изображение"
       end
 
-      fields_of_type :tag_list do
-        partial 'tag_list_with_suggestions'
-      end
+      field :tag_list
 
     end
   end

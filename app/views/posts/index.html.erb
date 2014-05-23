@@ -21,7 +21,7 @@
               <!-- article title -->
               <div class="item-title">
                 <h2><%= link_to post.name, post %></h2>
-                
+                <%= raw post.tag_list.map { |t| link_to "<span class='label label-default light'>#{t}</span>".html_safe, tag_path(t) }.join(' ') %>
                 <span class="label label-default light"><%= Russian::strftime(post.created_at, "%d %B, %Y") %></span> 
               </div>
 
@@ -41,8 +41,7 @@
 
             <% end %>
 
-
-            <!-- PAGINATION -->
+            <!-- PAGINATION 
             <div class="text-center">
               <ul class="pagination">
     
@@ -55,7 +54,7 @@
                 <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
               </ul>
             </div>
-            <!-- /PAGINATION -->
+           /PAGINATION -->
 
           </div>
           <!-- /LEFT COLUMN -->

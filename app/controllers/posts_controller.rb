@@ -2,7 +2,13 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order("created_at DESC")
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).order("created_at DESC")
+    else
+      @posts = Post.order("created_at DESC").search(params[:search])
+    end
+
+    @tags = Post.tag_counts(:order=>'name')
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +16,12 @@ class PostsController < ApplicationController
     end
   end
 
+
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @tags = Post.tag_counts(:order=>'name')
 
     respond_to do |format|
       format.html # show.html.erb

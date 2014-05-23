@@ -7,15 +7,28 @@
 
               <h3>ПОИСК</h3>
 
-              <form method="get" action="#" class="input-group">
-                <input type="text" class="form-control" name="s" id="s" value="" placeholder="Искать" />
+              <%= form_tag posts_path, :method => 'get', :class => 'input-group' do %>
+                <%= text_field_tag :search, params[:search], :class => "form-control", :id => "s", :placeholder => "Искать" %>
                 <span class="input-group-btn">
-                  <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                  <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+                    <i class='fa fa-search'></i>
+                  <% end %>
                 </span>
-              </form>
+              <% end %>
             </div>
 
+            <!-- blog search -->
+            <div class="widget">
 
+              <h3>ТЭГИ</h3>
+
+              <% if @tags.count > 0 %>
+              <%= raw @tags.map { |t| link_to "<span class='label label-default light'>#{t}</span>".html_safe, tag_path(:tag => t.name) }.join(' ') %>
+              <% else %>
+              <p>Нет ни одного тэга</p>
+              <% end %>
+
+            </div>
 
             <!-- RECENT,POPULAR -->
             <div class="widget">
@@ -30,7 +43,7 @@
                       Последние новости
                     </a>
                   </li>
-                 
+
                 </ul>
 
                 <!-- tabs content -->

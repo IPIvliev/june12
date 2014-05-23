@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class PhotoUploader < CarrierWave::Uploader::Base
+class ProductUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
 
@@ -10,10 +10,10 @@ class PhotoUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  process :resize_to_fill => [550, 480]
+  process :resize_to_fit => [640, 480]
 
   version :thumb do
-    process :resize_to_fill => [260, 260]
+    process :resize_to_fit => [260, 260]
   end
 
 end
